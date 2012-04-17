@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+	<meta charset="gb2312" />
+	<meta name="author" content="tenjessy@gmail.com" />
+	<meta name="Copyright" content="ewsos" />
+	<title>内容版式模块布局示例</title>
+	<link href="../style/style.css" rel="stylesheet" />
+	<script src="../js/jquery.js"></script>
+	<script src="../js/global.js"></script>
+</head>
+<body>
+<!--
+	@ date:2012-01-16
+	@ explanation:CSS规范文档
+-->
+<div class="articleArea">
+	<h3 class="tit">简介</h3>
+	<div class="description">
+		<p></p>
+	</div>
+	
+	<h3 class="tit">基本页面结构</h3>
+	<div class="description">
+		<div class="view">
+			<img src="img/page_structure.png" alt="页面结构" />
+		</div>
+		<ul class="orderList">
+			<li>
+				<p>HTML结构示例（仅作为参考）</p>
+				<div class="codeArea">
+<textarea rows="15">
+<!-- S 页面头部 -->
+<div id="header">
+	<div class="mainNav"><!-- 主导航条 --></div>
+</div>
+<!-- E 页面头部 -->
+
+<!-- S 主体内容 -->
+<div id="mainArea"></div>
+<!-- E 主体内容 -->
+
+<!-- S 页面尾部 -->
+<div id="footer">
+	<div class="copyright"><!-- 页尾版权信息 --></div>
+</div>
+<!-- E 页面尾部 --></textarea>
+				</div>
+			</li>
+		</ul>
+	</div>
+	
+	
+	<h3 class="tit">内容版式模块布局</h3>
+	<div class="description">
+		<div class="view"><img src="img/module.png" alt="" /></div>
+		<ul class="orderList">
+			<li>
+				<p>HTML结构示例（仅作为参考）：</p>
+				<div class="codeArea">
+<textarea rows="17">
+<div class="mainArea">
+	<!-- 分一栏的情况 -->
+	<div class="gird1c"></div>
+	
+	<!-- 分两栏布局的情况，如肛肠医院新站 -->
+	<div class="grid2c2s">
+		<div class="colMain"><!-- 主栏目 --></div>
+		<div class="colSub"><!-- 主边栏 --></div>
+	</div>
+	
+	<!-- 分三栏布局的情况，如整形新站首页 -->
+	<div class="grid3c5s6e">
+		<div class="colMain"><!-- 主栏目 --></div>
+		<div class="colSub"><!-- 主边栏 --></div>
+		<div class="colExtra"><!-- 扩展边栏 --></div>
+	</div>
+</div></textarea>
+				</div>
+			</li>
+			
+			<li>
+				<p class="hd">内容版式模块布局样式代码示例：</p>
+<pre class="codeArea">
+<span class="notation">/* ==========如上图所示，可根据模块的具体内容和站点实际情况来命名。比如，该模块是首页一个新闻模块========== */</span>
+<span class="iden">&lt;div class="grid2c6s news hotNews"&gt;</span>...<span class="iden">&lt;/div&gt;</span><span class="notation"></span>
+<span class="notation">/* ==========各个模块细节命名========== */</span>
+<span class="notation">/* 三栏版式 */</span>
+<span class="cla">.colSub</span><span class="braces">{</span><span class="braces">}</span><span class="notation">/* 1.主边栏（根据实际项目而定主边栏在左还是右） */</span>
+<span class="cla">.colMain</span><span class="braces">{</span><span class="braces">}</span><span class="notation">/* 2.主栏目 */</span>
+<span class="cla">.colExtra</span><span class="braces">{</span><span class="braces">}</span><span class="notation">/* 3.扩展边栏 */</span>
+<span class="notation">/* 二栏版式 */</span>
+<span class="cla">.colSub</span><span class="braces">{</span><span class="braces">}</span><span class="notation">/* 1.主边栏（根据实际项目而定主边栏在左还是右） */</span>
+<span class="cla">.colMain</span><span class="braces">{</span><span class="braces">}</span><span class="notation">/* 2.主栏目 */</span>
+</pre>
+			</li>
+			
+			<li>
+				<ul class="orderList">
+					<li>内容版式模块的样式只作为布局、框架固定的作用；</li>
+					<li>DOM 结构中，顺序始终是 colMain, colSub, colExtra. 请基于语义放置内容；</li>
+					<li>在布局模块当中，请遵循基类、扩展类、个性类的命名方式进行xhtml命名（需要多个命名规则的情况下）；</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	
+	
+	<h3 class="tit">模块举例</h3>
+	<div class="description">
+		<div class="view"><img src="img/module_sub.png" alt="" /></div>
+		<ul class="orderList">
+			<li>
+				<p>HTML结构示例（仅作为参考）</p>
+				<div class="codeArea">
+<textarea rows="12">
+<div class="modName">
+	<!-- 模块标题 -->
+	<div class="hd">
+		<h2 class="hdT"><!-- 主标题 --></h2>
+		<p class="hdTxt"><!-- 辅助小标题 --></p>
+		<a href="#" class="hdAct"><!-- 功能，根据实际需求来书写标签 --></a>
+	</div>
+	<!-- 模块内容 -->
+	<div class="bd">
+		<p>模块内容</p>
+	</div>
+</div></textarea>
+				</div>
+			</li>
+			
+			<li>
+				<p>模块样式代码示例</p>		
+<pre class="codeArea">
+<span class="cla">.modA .hd</span><span class="braces">{</span><span class="braces">}</span><span class="notation">/* 放置模块的标题 */</span>
+<span class="cla">.modA .hdT</span><span class="braces">{</span><span class="braces">}</span><span class="notation">/* 标题；根据栏目的级别， 标题的标签请使用Hn，如h2、h3、h4等 */</span>
+<span class="cla">.modA .hdTxt</span><span class="braces">{</span><span class="braces">}</span><span class="notation">/* 标题模块当中的附加文字 */</span>
+<span class="cla">.modA .hdAct</span><span class="braces">{</span><span class="braces">}</span><span class="notation">/* 标题模块动作链接，如更多、其它功能性链接 */</span>
+<span class="cla">.modA .bd</span><span class="braces">{</span><span class="braces">}</span><span class="notation">/* 放置模块的主体内容 */</span>
+
+<span class="notation">各个模块的具体内容没有强制的命名规范，以下作为参考</span>
+<span class="cla">.modA .img</span><span class="braces">{</span><span class="braces">}</span><span class="notation">/* 放置以图片为主的小模块 */</span>
+<span class="cla">.modA .txtArea</span><span class="braces">{</span><span class="braces">}</span><span class="notation">/* 放置以文字为主的小模块 */</span>
+<span class="cla">.modA .side</span><span class="braces">{</span><span class="braces">}</span><span class="notation">/* 放置边栏小模块 */</span>	
+<span class="cla">.modA .ft</span><span class="braces">{</span><span class="braces">}</span><span class="notation">/* 可用作扩展模块底部 */</span>
+</pre>
+			</li>
+		</ul>
+	</div>
+	
+	
+	
+	
+</div>
+</body>
+</html>

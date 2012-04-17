@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+	<meta charset="gb2312" />
+	<meta name="author" content="tenjessy@gmail.com" />
+	<meta name="Copyright" content="ewsos" />
+	<title>通用解决方案</title>
+	<link href="../style/style.css" rel="stylesheet" />
+	<script src="../js/jquery.js"></script>
+	<script src="../js/global.js"></script>
+</head>
+<body>
+<!--
+	@ date:2012-01-16
+	@ explanation:CSS规范文档
+	@ explanation:2012-01-29再次修改
+-->
+<div class="articleArea">
+	<h3 class="tit">简介</h3>
+	<div class="description">
+		<p>比较常用 ，但又棘手的解决方案，我们提前解决~！</p>
+	</div>
+	
+	
+	<h3 class="tit">li水平居中布局</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>
+				<p>li水平居中布局例代码（仅作为参考）</p>
+				<div class="codeArea">
+<textarea rows="16">
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="gb2312" />
+<title>li水平居中布局</title>
+<style type="text/css">
+.className { text-align:center; font-size:0px; /* 去除因display:inline-block而产生的间隙 */ }
+.className li { display:inline-block; height:28px; padding:0px 5px; line-height:28px; font-size:14px; *display:inline; *zoom:1; /* 为低于IE7的浏览器拥有布局属性 */ }
+@media screenand(-webkit-min-device-pixel-ratio:0){
+    .className{ -webkit-text-size-adjust:none; }/* 让chrome支持12px以下的字体 */
+}
+</style>
+</head>
+
+<body>
+<ul class="className">
+	<li>就医</li>
+	<li>疾病</li>
+	<li>整形</li>
+	<li>问答</li>
+	<li>保健</li>
+</ul>
+</body>
+</html>
+</textarea>
+				</div>
+			</li>
+			<li>以上为核心代码，可根据项目的具体方案作细节调整；</li>
+			<li>display:inline-block;是最核心的代码，同时为兼顾低于IE7的浏览器，特作了*display:inline; *zoom:1；</li>
+		</ul>
+	</div>
+	
+	
+	<h3 class="tit">100%高度布局</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>
+				<p>100%高度布局示例代码：</p>
+				<div class="codeArea">
+<textarea rows="16">
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="gb2312" />
+<title>100%高度布局</title>
+<style>
+* { padding:0px; margin:0px; font-size:14px; line-height:1.75; } /* 全局简单reset */
+.colMain p,
+.colSub p { padding:4px 10px; }
+/* 100%布局核心代码 */
+html,
+body { height:100%; }/* 兼容IE6及早期Firefox浏览器 */
+.solFullHeight { position:relative; height:100%; }
+.solFullHeightCol { position:absolute; top:0px; height:100%; }
+.solFullHeight .colMain { left:0px; width:79%; background:#999999; }
+.solFullHeight .colSub { right:0px; width:20%; background:#999999; }
+</style>
+</head>
+
+<body>
+<div class="solFullHeight">
+	<div class="solFullHeightCol colMain">
+		<p>100%高度布局</p>
+	</div>
+	<div class="solFullHeightCol colSub">
+		<p>100%高度布局</p>
+	</div>
+</div>
+</body>
+</html>
+</textarea>
+				</div>
+			</li>
+			<li>以上为核心代码，可根据项目的具体方案作细节调整；</li>
+			<li>以上代码当中，是以solFullHeight这个div作为容器，平时项目当中，一般建议用body这个作为容器；否则，建议使用等高布局~！</li>
+		</ul>
+	</div>
+
+
+	<h3 class="tit">等高布局</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>
+				<p>等高布局示例代码：</p>
+				<div class="codeArea">
+<textarea rows="16">
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="gb2312" />
+<title>等高布局示例</title>
+<style>
+* { padding:0px; margin:0px; font-size:14px; line-height:1.75; } /* 全局简单reset */
+.header,
+.footer { width:970px; margin:0px auto; background:#eeeeee; text-align:center; }
+.mainArea { width:970px; margin:0px auto; }
+.header h1,
+.footer p { padding:20px; }
+.colMain p,
+.colSub p { padding:4px 10px; }
+/* 等高布局核心代码 */
+.solEqualHeight { width:970px; overflow:hidden; *zoom:1; }
+.solEqualHeightCol { padding-bottom:9999px; margin-bottom:-9999px; /* 等高布局的核心 */ }
+.solEqualHeight .colMain { float:left; width:700px; background:#999999; }
+.solEqualHeight .colSub { float:right; width:260px; background:#9a9a9a; }
+</style>
+</head>
+
+<body>
+<div id="header" class="header">
+	<h1>Header</h1>
+</div>
+<div id="mainArea" class="mainArea">
+	<div class="solEqualHeight">
+		<div class="solEqualHeightCol colMain">
+			<p>等高布局的核心在于合理使用padding-bottom和margin-bottom这两个属性！同时，这两个属性的值并没有要求要像代码当中给出那样，只要设置得足够大便可~！还有，别忘了添加宽度哦~！当然，这里的只提供了一种解决方案，你应该有更好的方案~！</p>
+			<p>等高布局的核心在于合理使用padding-bottom和margin-bottom这两个属性！同时，这两个属性的值并没有要求要像代码当中给出那样，只要设置得足够大便可~！还有，别忘了添加宽度哦~！当然，这里的只提供了一种解决方案，你应该有更好的方案~！</p>
+			
+		</div>
+		<div class="solEqualHeightCol colSub">
+			<p>等高布局的核心在于合理使用padding-bottom和margin-bottom这两个属性！同时，这两个属性的值并没有要求要像代码当中给出那样，只要设置得足够大便可~！还有，别忘了添加宽度哦~！当然，这里的只提供了一种解决方案，你应该有更好的方案~！</p>
+			<p>等高布局的核心在于合理使用padding-bottom和margin-bottom这两个属性！同时，这两个属性的值并没有要求要像代码当中给出那样，只要设置得足够大便可~！还有，别忘了添加宽度哦~！当然，这里的只提供了一种解决方案，你应该有更好的方案~！</p>
+		</div>
+	</div>
+</div>
+<div id="footer" class="footer">
+	<p>Footer</p>
+</div>
+</body>
+</html>
+</textarea>
+				</div>
+			</li>
+			<li>等高布局的方案有很多，优雅程度各不一样~这里列举的，仅是最快，且用最少的hack的方法！</li>
+		</ul>
+	</div>
+
+
+	
+	<h3 class="tit">png24背景半透明</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>
+				<p>png24背景半透明示例代码</p>
+				<div class="codeArea">
+<textarea rows="16">
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>png24背景半透明</title>
+<style>
+* { padding:0px; margin:0px; font-size:14px; line-height:1.75; } /* 全局简单reset */
+.className { width:200px; height:200px; background:#000000; }
+.transparent { width:200px; height:200px; background:url(img/png.png) no-repeat 0px 0px; _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/png.png', sizingMethod='scale'); /* for IE6 */ }
+</style>
+</head>
+
+<body>
+<div class="className">
+<div class="transparent"><!-- 这里将载入一个png24的透明背景图片 --></div>
+</div>
+</body>
+</html>
+</textarea>
+				</div>
+			</li>
+			<li>
+				<p>解法：</p>
+				<p>filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=bEnabled, sizingMethod=sSize, src=sURL);</p>
+			</li>
+			<li>
+				<p>属性：</p>
+				<ul class="orderList">
+					<li>enabled: 可选项。布尔值(Boolean)。设置或检索滤镜是否激活;</li>
+					<li>true  : 默认值。滤镜激活;</li>
+					<li>false:滤镜被禁止</li>
+					<li>sizingMethod: 可选项。字符串(String)。设置或检索滤镜作用的对象的图片在对象容器边界内的显示方式;</li>
+					<li>crop: 剪切图片以适应对象尺寸 </li>
+					<li>image: 默认值。增大或减小对象的尺寸边界以适应图片的尺寸;</li>
+					<li>scale: 缩放图片以适应对象的尺寸边界;</li>
+					<li>src: 必选项。字符串(String)。使用绝对或相对 url 地址指定背景图像。假如忽略此参数，滤镜将不会作用;</li>
+				</ul>
+			</li>
+			<li>
+				<p>特性：</p>
+				<ul class="orderList">
+					<li>Enabled: 可读写。布尔值(Boolean)。参阅 enabled 属性;</li>
+					<li>sizingMethod: 可读写。字符串(String)。参阅 sizingMethod 属性;</li>
+					<li>src: 可读写。字符串(String)。参阅 src 属性;</li>
+				</ul>
+			</li>
+			<li>
+				<p>注意点：</p>
+				<ul class="orderList">
+					<li>使用了scale, 这个会适应元素宽度，所以需要设置固定的高度或宽度;</li>
+					<li>src的路径相对于当前文档来说的，即上传到服务器当中，应该使用绝对路径来引用背景图片，而不是相对路径;</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+	
+
+</body>
+</html>

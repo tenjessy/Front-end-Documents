@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+	<meta charset="gb2312" />
+	<meta name="author" content="tenjessy@gmail.com" />
+	<meta name="Copyright" content="ewsos" />
+	<title>通用模块</title>
+	<link href="../style/style.css" rel="stylesheet" />
+	<script src="../js/jquery.js"></script>
+	<script src="../js/global.js"></script>
+</head>
+<body>
+<!--
+	@ date:2012-01-29
+	@ explanation:通用模块
+-->
+<div class="articleArea">
+	<h3 class="tit">简介</h3>
+	<div class="description">
+		<p>经常用到的模块，我们通常希望能够复用！这样，在保证代码的一致性时，又能提高效率~！</p>
+	</div>
+	
+	
+	<h3 class="tit">分页模块</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>
+				<p>医院营销中心分页的通用结构：</p>
+				<div class="codeArea">
+<textarea rows="3">
+<div class="pageNav">
+	<span>上一页</span><em>1</em><a href="#">2</a><a href="#">4</a>...<a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#">下一页</a>
+</div></textarea>
+				</div>
+				<p class="attention">说明：span表示不可点击；em表示当前页；a表示可点击；</p>
+			</li>
+			<li>设计与制作时，应当考虑分页模块在列表页面、终端页面的通用性；</li>
+			<li>制作时，考虑页码的点击区域为100%；</li>
+		</ul>
+	</div>
+	
+	
+	<h3 class="tit">面包屑模块</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>
+				<p>医院营销中心面包屑的通用结构：</p>
+				<div class="codeArea">
+<textarea rows="5">
+<div class="crumb">
+	<a target="_blank" href="#">首页</a> &gt;
+	<a target="_blank" href="#">列表页</a> &gt;
+	<span class="current">终端页</span>
+</div></textarea>
+				</div>
+			</li>
+			<li>在默认情况下，该模块的设计应当以简洁为主；</li>
+			<li>在默认情况下，面包屑不应该出现在首页；</li>
+			<li>当某个页面出现面包屑模块的时候，h1标签应当仅出现在列表页当中；（页面有元素来表现该网页主题的时候(非面包屑模块)，h1标签在这里处理；页面无元素是表现该网页主题的时候，h1放在面包屑模块！）</li>
+		</ul>
+	</div>
+	
+	
+	<h3 class="tit">文章上、下篇导航</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>
+				<p>医院营销中心文章上、下篇导航的通用结构：</p>
+				<div class="codeArea">
+<textarea rows="4">
+<ul class="artNav">
+	<li>上一篇：<a href="#" target="_blank">上一篇文章链接</a></li>
+	<li>下一篇：<a href="#" target="_blank">上一篇文章链接</a></li>
+</ul></textarea>
+				</div>
+			</li>
+			<li>默认情况下，建议将文字直接居中显示；</li>
+			<li>
+				可使用:first-child和:last-child为高级浏览器作特殊效果，比如：				
+				<pre class="codeArea">
+.artNav li:first-child { text-align:left; /* 让上一篇导航的文字向左对齐 */ }
+.artNav li:last-child { text-align:right; /* 让下一篇导航的文字向右对齐 */ }</pre>
+			</li>
+		</ul>
+	</div>
+	
+	
+	
+	<h3 class="tit">页面尾部模块</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>
+				<p>医院营销中心页面尾部通用结构</p>
+				<div class="codeArea">
+<textarea rows="8">
+<div id="footer" class="footer">
+	<p class="footNav">
+		<!-- 尾部导航 -->
+	</p>
+	<div class="copyright">
+		<!-- 尾部版权声明 -->
+	</div>
+</div></textarea>
+				</div>
+			</li>
+			<li>默认情况下，请考虑尾部的通用性；</li>
+			<li>如果项目使用CMS，尤其是医院营销中心的CMS，不建议将《友情链接》这样的模块写到公共尾部当中；</li>
+		</ul>
+	</div>
+</div>
+	
+
+</body>
+</html>

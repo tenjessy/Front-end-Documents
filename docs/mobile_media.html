@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+	<meta charset="gb2312" />
+	<meta name="author" content="tenjessy@gmail.com" />
+	<meta name="Copyright" content="ewsos" />
+	<title>media示例代码</title>
+	<link href="../style/style.css" rel="stylesheet" />
+	<script src="../js/jquery.js"></script>
+	<script src="../js/global.js"></script>
+</head>
+<body>
+<!--
+	@ date:2012-02-23
+	@ explanation:移动规范方案
+-->
+<div class="articleArea">
+	<h3 class="tit">简介</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>该demo主要是为响应式网站与移动端而产生；</li>
+		</ul>
+	</div>
+	
+	<h3 class="tit">media示例代码</h3>
+	<div class="description">
+<pre class="codeArea">
+<span class="notation">/* Smartphones (portrait and landscape) */</span>
+<span class="tag">@media only screen and (min-device-width : 320px) and (max-device-width : 480px)</span> <span class="braces">{</span>
+	<span class="notation">/* this is your custom style */</span>
+<span class="braces">}</span>
+
+<span class="notation">/* Smartphones (landscape) */</span>
+<span class="tag">@media only screen and (min-width : 321px)</span> <span class="braces">{</span>
+	<span class="notation">/* this is your custom style */</span>
+<span class="braces">}</span>
+
+<span class="notation">/* Smartphones (portrait) */</span>
+<span class="tag">@media only screen and (max-width : 320px)</span> <span class="braces">{</span>
+	<span class="notation">/* this is your custom style */</span>
+<span class="braces">}</span>
+
+<span class="notation">/* iPads (portrait and landscape) */</span>
+<span class="tag">media only screen and (min-device-width : 768px) and (max-device-width : 1024px)</span> <span class="braces">{</span>
+	<span class="notation">/* this is your custom style */</span>
+<span class="braces">}</span>
+
+<span class="notation">/* iPads (landscape) */</span>
+<span class="tag">@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)</span> <span class="braces">{</span>
+	<span class="notation">/* this is your custom style */</span>
+<span class="braces">}</span>
+
+<span class="notation">/* iPads (portrait) */</span>
+<span class="tag">@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait)</span> <span class="braces">{</span>
+	<span class="notation">/* this is your custom style */</span>
+<span class="braces">}</span>
+
+<span class="notation">/* Desktops and laptops */</span>
+<span class="tag">@media only screen and (min-width : 1224px)</span> <span class="braces">{</span>
+	<span class="notation">/* this is your custom style */</span>
+<span class="braces">}</span>
+
+<span class="notation">/* Large screens */</span>
+<span class="tag">@media only screen and (min-width : 1824px)</span> <span class="braces">{</span>
+	<span class="notation">/* this is your custom style */</span>
+<span class="braces">}</span>
+
+<span class="notation">/* iPhone 4 */</span>
+<span class="tag">@mediaonly screen and (-webkit-min-device-pixel-ratio : 1.5),only screen and (min-device-pixel-ratio : 1.5)</span> <span class="braces">{</span>
+	<span class="notation">/* this is your custom style */</span>
+<span class="braces">}</span>
+</pre>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+	<meta charset="gb2312" />
+	<meta name="author" content="tenjessy@gmail.com" />
+	<meta name="Copyright" content="ewsos" />
+	<title>字体方案</title>
+	<link href="../style/style.css" rel="stylesheet" />
+	<script src="../js/jquery.js"></script>
+	<script src="../js/global.js"></script>
+</head>
+<body>
+<!--
+	@ date:2012-01-16
+	@ explanation:CSS规范文档
+-->
+<div class="articleArea">
+	<h3 class="tit">简介</h3>
+	<div class="description">
+		<p></p>
+	</div>
+	
+	
+	<h3 class="tit">衬线字体：serif</h3>
+	<div class="description">
+		<p>比如这里的英文：<span style="font-family:Georgia, 'Times New Roman', Times, serif">My name is JunyongChen</span>和这里的<span style="font-family:serif">《这里讨论的是衬线字体》；</span></p>
+		<p><span style="font-weight:700;">总结：</span><span>只要满足<span class="b">末端加强原则</span>的字体都是衬线字体。所谓的末端加强，就是使用衬线或粗细变化，使字体笔画的末端得到加强，以改善小号文字的可读性。</span></p>
+	</div>
+	
+	
+	<h3 class="tit">非衬线字体：sans-serif</h3>
+	<div class="description">
+		<p>比如这里的英文：<span style="font-family:Tahoma, Verdana, Arial">My name is JunyongChen</span>和这里的<span style="font-family:微软雅黑, Tahoma, Verdana, Arial">《这里讨论的是非衬线字体》；</span></p>
+		<p><span style="font-weight:700;">总结：</span><span>衬线字体以外的一切字体都是无衬线字体，<span class="b">无衬线字体比较圆滑，线条一般粗细均匀。</span>比较适合用作艺术字、标题等。因为无衬线字体通常粗细比较均匀，所以在小字体显示的时候，可读性会降低，容易引起视觉疲劳。</span></p>
+	</div>
+	
+	
+	<h3 class="tit">目前医院营销中心统一的web字体方案：</h3>
+	<div class="description">
+		<p class="attention">font-family:"\5B8B\4F53", Arial, Tahoma, Helvetica, sans-serif;</p>
+	</div>
+	
+	
+	<h3 class="tit">注意事项</h3>
+	<div class="description">
+		<ol class="orderList">
+			<li>以上写法只作为参考，真实项目当中一般在reset当中对字体进行统一；</li>
+			<li>细节地方可单独书写字体，如一级标题：font-family:"\9ED1\4F53"; font-size:16px; font-weight:700; line-height:28px; （简写成：font:700 16px/1.75 "\9ED1\4F53";）</li>
+			<li>鉴于目前上线的站点均采用宋体（"\5B8B\4F53"）作为首选，因此在确定此规范后，字体依然是采用宋体作为首先字体；</li>
+			<li>样式表当中的中文字字体写法，统一使用 ascii 字符表示，使得在任何编码下都无问题；详情可参考《中文字体拼音及ascii对照表；》</li>
+			<li>默认情况下，window xp之前的操作没有开启字体平滑效果，因此在使用微软雅黑等非衬线字体的时候应该要充分考虑清楚！</li>
+		</ol>
+	</div>
+	
+	
+	<h3 class="tit">中文字体拼音及ascii对照表<a name="ascii"></a></h3>
+	<div class="description">
+		<table class="data">
+			<thead>
+				<tr>
+					<th>中文名</th>
+					<th>英文名</th>
+					<th>ascii</th>
+				</tr>
+				<tr>
+					<th colspan="3">Windows</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>黑体</td>
+					<td>SimHei</td>
+					<td>\9ED1\4F53</td>
+				</tr>
+				<tr>
+					<td>宋体</td>
+					<td>SimSun</td>
+					<td>\5B8B\4F53</td>
+				</tr>
+				<tr>
+					<td>新宋体</td>
+					<td>NSimSun</td>
+					<td>\65B0\5B8B\4F53</td>
+				</tr>
+				<tr>
+					<td>仿宋</td>
+					<td>FangSong</td>
+					<td>\4EFF\5B8B</td>
+				</tr>
+				<tr>
+					<td>楷体</td>
+					<td>KaiTi</td>
+					<td>\6977\4F53</td>
+				</tr>
+				<tr>
+					<td>仿宋_GB2312</td>
+					<td>FangSong_GB2312</td>
+					<td>\4EFF\5B8B_GB2312</td>
+				</tr>
+				<tr>
+					<td>楷体_GB2312</td>
+					<td>KaiTi_GB2312</td>
+					<td>\6977\4F53_GB2312</td>
+				</tr>
+				<tr>
+					<td>微软正黑体</td>
+					<td>Microsoft JhengHei</td>
+					<td>\5FAE\x8F6F\6B63\9ED1\4F53</td>
+				</tr>
+				<tr>
+					<td>微软雅黑</td>
+					<td>Microsoft YaHei</td>
+					<td>\5FAE\8F6F\96C5\9ED1</td>
+				</tr>
+			</tbody>
+			<thead>
+				<tr>
+					<th colspan="3">Mac OS</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>华文细黑</td>
+					<td>STHeiti Light [STXihei]</td>
+					<td>\534E\6587\7EC6\9ED1</td>
+				</tr>
+				<tr>
+					<td>华文黑体</td>
+					<td>STHeiti</td>
+					<td>\534E\6587\9ED1\4F53</td>
+				</tr>
+				<tr>
+					<td>华文楷体</td>
+					<td>STKaiti</td>
+					<td>\534E\6587\6977\4F53</td>
+				</tr>
+				<tr>
+					<td>华文宋体</td>
+					<td>STSong</td>
+					<td>\534E\6587\5B8B\4F53</td>
+				</tr>
+				<tr>
+					<td>华文仿宋</td>
+					<td>STFangsong</td>
+					<td>\534E\6587\4EFF\5B8B</td>
+				</tr>
+				<tr>
+					<td>丽黑 Pro</td>
+					<td>LiHei Pro Medium</td>
+					<td>\4E3D\9ED1 Pro</td>
+				</tr>
+				<tr>
+					<td>丽宋 Pro</td>
+					<td>LiSong Pro Light</td>
+					<td>\4E3D\5B8B Pro</td>
+				</tr>
+				<tr>
+					<td>苹果丽中黑</td>
+					<td>Apple LiGothic Medium</td>
+					<td>\82F9\679C\4E3D\4E2D\9ED1</td>
+				</tr>
+				<tr>
+					<td>苹果丽细宋</td>
+					<td>Apple LiSung Light</td>
+					<td>\82F9\679C\4E3D\7EC6\5B8B</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	
+</div>
+</body>
+</html>

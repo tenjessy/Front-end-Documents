@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="gb2312" />
+	
+    <title>media测试</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	<style>
+		* { margin:0px; padding:0px; }
+		@media all and (min-width:321px) {
+			.min-width-321px { color:#ff0000; font-weight:700; word-break:break-all; word-wrap:break-word; }
+		}
+		
+		
+	</style>
+	<script src="js/jquery.tools.min.js"></script>
+	<script>
+		$(function(){
+			alert($("body").width());
+		});
+	</script>
+</head>
+<body>
+
+<div class="pageWrap">
+<pre class="min-width-321px">
+/* Smartphones (landscape) */
+@media only screen and (min-width : 321px) {
+	/* this is your custom style */
+}
+</pre>
+</div>
+</body>
+</html>

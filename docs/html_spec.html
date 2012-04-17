@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+	<meta charset="gb2312" />
+	<meta name="author" content="tenjessy@gmail.com" />
+	<meta name="Copyright" content="ewsos" />
+	<title>html规范文档</title>
+	<link href="../style/style.css" rel="stylesheet" />
+	<script src="../js/jquery.js"></script>
+	<script src="../js/global.js"></script>
+</head>
+<body>
+<!--
+	@ date:2012-01-16
+	@ explanation:CSS规范文档
+-->
+<div class="articleArea">
+	<h3 class="tit">简介</h3>
+	<div class="description">
+		<p>制定本规范的目的在于使我们的html代码更加易于维护和重用~！鉴于历史原因，本规范主要针对新项目~！当然，旧项目也可以借鉴~！</p>
+	</div>
+		
+	
+	<h3 class="tit">文件规范</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>新页面的DTD声明统一为HTML5版本声明~！但html编码要求，还是严格遵循(x)html的风格；</li>
+			<li>文件格式统一使用gb2312编码；</li>
+			<li>禁止使用&lt;meta http-equiv="X-UA-Compatible" content="IE=7" /&gt;来限制IE版本；</li>
+		</ul>
+	</div>	
+
+	<h3 class="tit">标签规范</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>
+				<p>新页面的DTD声明统一为HTML5版本声明，示例如下：</p>
+				<div class="codeArea">
+<textarea rows="10">
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="gb2312" />
+<title>网页标题</title>
+</head>
+<body>
+	这里写html代码
+</body>
+</html></textarea>
+				</div>
+			</li>
+			<li>
+				<p>严格遵循(x)html的编码风格</p>
+				<ul class="orderList">
+					<li>(x)html元素必须被正确地嵌套</li>
+					<li>(x)html元素必须被关闭</li>
+					<li>(x)html标签名、属性名、属性值必须用小写字母且不能简写</li>
+					<li>(x)html文档必须拥有根元素</li>
+				</ul>
+				<p class="attention">注意：验证方式请使用Firefox当中的<a href="https://addons.mozilla.org/zh-CN/firefox/addon/web-developer/?src=search" target="_blank">Web Developer</a>插件进行快速验证或者直接到<a href="http://validator.w3.org/" target="_blank">http://validator.w3.org/</a>这里验证</p>
+			</li>
+		</ul>
+	</div>
+	
+	
+	<h3 class="tit">注释规范</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>
+				<p>组件或者栏目级注释</p>
+				<div class="codeArea">
+<textarea rows="3">
+<!-- S 页面主体区域 -->
+<div id="mainArea" class="mainArea">......内容......</div>
+<!-- E 页面主体区域 --></textarea>
+				</div>
+			</li>
+			
+			<li>
+				<p>对于需要特别声明的模块，可酌情添加一些说明，比如：</p>
+				<div class="codeArea">
+<textarea rows="4">
+<!--
+	@ 视频播放区域
+	@ 播放区域大小：406px * 308px
+--></textarea>
+				</div>
+			</li>
+		</ul>
+	</div>
+	
+	
+	<h3 class="tit">规划HTML结构</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>
+				<p>一般情况下，是这样进行模块化的</p>
+				<div class="codeArea">
+<textarea rows="27">
+<!-- S 模块A -->
+<div class="mod modA">
+　　<div class="hd"><h3 class="hdT">这里是标题</h3></div>
+　　<div class="bd">
+　　　　<p>这里放置内容</p>
+　　</div>
+</div>
+<!-- E 模块A -->
+
+<!-- S 模块B -->
+<div class="mod modB">
+　　<div class="hd"><h3 class="hdT">这里是标题</h3></div>
+　　<div class="bd">
+　　　　<p>这里放置内容</p>
+　　</div>
+</div>
+<!-- E 模块B -->
+
+/* 模块A、模块B公共样式 */
+.mod { }
+.mod .hd { }
+.mod .hdT { }
+.mod .bd { }
+/* 模块A */
+.modA .hdT { }
+/* 模块B */
+.modB .hdT { }</textarea>
+				</div>				
+			</li>
+			<li>命名规范，请查看《CSS规范文档》当中的《命名规范》</li>
+			<li>命名顺序，请遵循基类、扩展类、个性类的命名方式进行xhtml命名（需要多个命名规则的情况下）</li>
+		</ul>
+	</div>
+</div>	
+</div>
+</body>
+</html>

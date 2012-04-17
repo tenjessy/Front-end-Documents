@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+	<meta charset="gb2312" />
+	<meta name="author" content="tenjessy@gmail.com" />
+	<meta name="Copyright" content="ewsos" />
+	<title>CSS规范文档</title>
+	<link href="../style/style.css" rel="stylesheet" />
+	<script src="../js/jquery.js"></script>
+	<script src="../js/global.js"></script>
+</head>
+<body>
+<!--
+	@ date:2012-01-16
+	@ explanation:CSS规范文档
+-->
+<div class="articleArea">
+	<h3 class="tit">简介</h3>
+	<div class="description">
+		<p>制定本规范的目的在于使我们的CSS代码更加易于维护和重用~！鉴于历史原因，本规范主要针对新项目~！当然，旧项目也可以借鉴~！</p>
+	</div>
+	
+	
+	<h3 class="tit">文件规范</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>文件格式统一使用gb2312编码；</li>
+			<li>如果文件名能用使用一个单词描述则直接使用一个单词命名，比如：index.css~！否则在每个单词之间使用“_”作为链接，如public_sidebar.css；</li>
+		</ul>
+	</div>
+	
+	
+	<h3 class="tit">注释规范</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>
+				<p>文件顶部注释示例（仅作为参考）</p>
+<pre class="codeArea">
+/**
+ * @ date:创建日期
+ * @ explanation:文件简介
+ * @ author:作者
+ */
+</pre>
+				<p class="attention">注意：每一个CSS文件必须包含这三项注释！如果有依赖关系或者其它关系，可在后面自行添加~</p>
+			</li>
+			
+			<li>
+				<p>组件或者栏目级注释示例（仅作为参考）</p>			
+<pre class="codeArea">
+/**
+ * @ explanation:组件简介
+ */
+</pre>
+			</li>
+			
+			<li>
+				<p>小模块注释示例（仅作为参考）</p>					
+<pre class="codeArea">
+/* @ name */
+</pre>
+			</li>
+		</ul>
+	</div>
+
+	
+	<h3 class="tit">命名规范</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>id、class命名时，默认采用小驼峰式命名法，即第一个单词以小写字母开始，第二个单词的首字母大写，如：mainNav、artAbout、colMain、txtImg、expertInfo、txtList；</li>
+			<li>在id、class命名时，请以结构和功能为主，内容为辅，表现形式为最次。即以模块功能、内容为首选命名方式，如itemList、news、depart等等；</li>
+			<li>id 和 class 尽量用英文单词命名，确实找不到合适的单词时，可以考虑使用产品的中文拼音或者医院方面的专业术语；</li>
+			<li>在不影响语义的情况下，id 和 class 名称中可以适当采用英文单词缩写，比如 sub、col、nav、hd、bd、ft 等；</li>
+		</ul>
+	</div>
+	
+	
+	<h3 class="tit">hack规范</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>一般情况下，不推荐使用IE的条件注释来增加一个单独的CSS；</li>
+			<li>
+				<p>对于大项目，hack不可避免！因为建议使用更加优雅的方式来书写hack，比如：</p>
+				<div class="example">
+					<p>统一把hack写到选择符的最后面：{ position:relative; overflow:hidden; *zoom:1; }；</p>
+					<p>给hack增加一定的行内注释：.className li{ float:left; width:60px; height:30px; margin-left:10px; display:inline; /* for IE 6 */ }；</p>
+				</div>
+			</li>
+			<li>
+				<p>通用hack</p>
+				待整理！
+			</li>
+		</ul>
+	</div>
+	
+	
+	<h3 class="tit">书写规范</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>
+				<p>书写顺序</p>
+				<ol class="example">
+					<li>定位、显示：position、z-index、top、right、bottom、left、clear、float、display、visibility</li>
+					<li>元素自身属性（盒子模型）：width、height、margin、padding、background、border</li>
+					<li>文本属性：color、font、line-height、text-align、text-indent、vertical-align、text-decoration、word-wrap、white-space</li>
+					<li>其它特定属性：overflow、cursor</li>
+					<li>CSS3相关属性：text-shadow、border-radius、opacity</li>
+				</ol>
+				<p class="attention">注意：以上书写顺序，没有强制每个属性都要按以上的顺序来写，但我们应该养成良好的习惯，让看代码的人更易理解。易读对于团队协作来说是非常重要的！建议按每个大分类的顺序来写！</p>		
+			</li>
+			<li>
+				<p>书写示例（仅作为参考）</p>
+<pre class="codeArea">
+/**
+ * @ 头部
+ */
+.header { position:relative; height:126px; background:url(../img/header_bg.jpg) no-repeat; }
+/* Logo区域 */
+.logo { width:128px; height:72px; padding:23px 33px; }
+.logo img { width:128px; height:72px; }
+/* 站点描述 */
+.siteDescription { display:none; }
+</pre>
+				<p class="attention">注意：注释、书写顺序，请参考上面的规范~</p>
+			</li>
+			<li>
+				<p>书写细节</p>
+				<ul class="attention">
+					<li>区域模块间记得多按几个回车，以全区分；</li>
+					<li>使用群组选择器的时候，每一个选择器占一行；</li>
+					<li>避免使用低效选择器：<a href="http://code.google.com/intl/zh-CN/speed/page-speed/docs/rendering.html" target="_blank">http://code.google.com/intl/zh-CN/speed/page-speed/docs/rendering.html</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	
+	<h3 class="tit">注意事项</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>
+				<p>一定要有全局设置</p>
+				<ul class="orderList">
+					<li>全局设置可以避免重复书写同样的东西。尤其是需要多人共同写样式的项目当中！目前医院营销中心当中各医院官方站点的全局样式名称统一为global.css，里面包含着reset、公共头尾、整站通用模块的样式；</li>
+					<li>
+						<p>一般情况下，不要直接给标签写样式。而应该使用class。像下面这种写法，并不是很合适:</p>
+						<pre class="example">
+h1{ font-size:30px; }
+h2{ font-size:20px }
+h3{ font-size:10px; }</pre>
+					</li>
+					<li>
+						<p>一般情况下，不推荐按表现形式的命名规则，而应该按功能或者内容的形式进行命名。像下面这种写法，并不是很合适：</p>
+						<pre class="example">
+.f00 { color:#ff0000; }
+.f60 { color:#ff6600; }
+.fl { float:left; }
+.fr { float:right; }
+.fb { font-weight:bold; }</pre>
+					</li>
+				</ul>
+			</li>
+			<li>
+				注意缩写
+				<ul class="orderList">
+					<li>对于font-size、font-weight、font-family、background-color、background-image、background-repeat这一类的，我们一般推荐你进行缩写：background:url(image) no-repeat 0px 0px;</li>
+					<li>为了避免网速缓慢导致CSS已经加载，而图片仍未加载完成或图片服务器挂掉时文本不可见，请尽量使用加上CSS定义的背景颜色，如：background:#ff6600 url(image) no-repeat 0px 0px;</li>
+					<li>
+						合理运用空标签、废弃的标签，比如：&lt;i&gt;&lt;/i&gt;、&lt;b&gt;&lt;/b&gt;、&lt;s&gt;&lt;/s&gt;
+						<pre class="example">
+.arrow { display:block; width:0px; height:0px; border-width:5px; border-style:solid; border-color:#666666 #ffffff #ffffff #ffffff; font-size:0px; overflow:hidden; }
+/* 上面的代码，在一个白色的背景下，将会创建一个尖角向下的小三角形 */	</pre>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>hasLayout</p>
+				
+				<table class="data">
+					<tbody>
+						<tr>
+							<th>CSS property</th>
+							<th>Value</th>
+						</tr>
+						<tr>
+							<td>position</td>
+							<td>absolute</td>
+						</tr>
+						<tr>
+							<td>float</td>
+							<td>left or right</td>
+						</tr>
+						<tr>
+							<td>display</td>
+							<td>inline-block</td>
+						</tr>
+						<tr>
+							<td>width</td>
+							<td>任何值除了auto</td>
+						</tr>
+						<tr>
+							<td>height</td>
+							<td>任何值除了auto</td>
+						</tr>
+						<tr>
+							<td>-ms-writing-mode</td>
+							<td>tb-rl</td>
+						</tr>
+						<tr>
+							<td>zoom</td>
+							<td>除 normal 外任意值</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="attention">
+					<p>hasLayout是一把双刃剑，有好亦有坏！因为在IE浏览器中，很多兼容问题都是hasLayout引起的！</p>
+					<p>更多关于这个列表的资料，请看<a href="http://msdn.microsoft.com/en-us/library/ms533776(v=VS.85).aspx" target="_blank">http://msdn.microsoft.com/en-us/library/ms533776(v=VS.85).aspx</a></p>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<h3 class="tit">代码测试</h3>
+	<div class="description">
+		<table class="data">
+			<tbody>
+				<tr>
+					<th style="width:20%">&nbsp;</th>
+					<th>Win XP</th>
+					<th>Win 7</th>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th>IE 9.0</th>
+					<td></td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<th>IE 8.0</th>
+					<td>A</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<th>IE 7.0</th>
+					<td>A</td>
+					<td></td>
+				</tr>
+				<tr>
+					<th>IE 6.0</th>
+					<td>A</td>
+					<td></td>
+				</tr>
+				<tr>
+					<th>Firefox 3.6↑</th>
+					<td>A</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<th>Safari 5.0↑</th>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<th>Chrome  (latest stable)</th>
+					<td>A</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<th>Opera  (latest stable)</th>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="attention">
+			<p>以上浏览器的兼容底线，是各医院各个站点统计后得出的结论，跟网络流传的可能有一定的差距！</p>
+			<p>以上为浏览器兼容的底线，凡A级浏览器，均需严格测试，并做到 最大的兼容处理！</p>
+			<p>更多关于这个列表的资料，请看：<a href="#" target="_blank">http://developer.yahoo.com/yui/articles/gbs/</a></p>
+		</div>
+	</div>
+</div>
+</body>
+</html>

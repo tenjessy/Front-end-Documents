@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+	<meta charset="gb2312" />
+	<meta name="author" content="tenjessy@gmail.com" />
+	<meta name="Copyright" content="ewsos" />
+	<title>css reset</title>
+	<link href="../style/style.css" rel="stylesheet" />
+	<script src="../js/jquery.js"></script>
+	<script src="../js/global.js"></script>
+</head>
+<body>
+<!--
+	@ date:2012-01-30
+	@ explanation:css reset
+-->
+<div class="articleArea">
+	<h3 class="tit">简介</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>reset的目的是为了减少在默认行高，边距和标题的字体大小，等等浏览器的不一致性；</li>
+			<li>该reset仅针对中文平台；</li>
+			<li>reset只是一个起点，并不是万能的，请根据项目进行相应的更改，比如电子商务类型的网站，可酌情增加del这一类的标签重置；</li>
+		</ul>
+	</div>
+	
+	<h3 class="tit">global部分示例代码</h3>
+	<div class="description">
+		<ul class="orderList">
+			<li>
+				<p>源代码</p>
+<pre class="codeArea">
+<span class="tag">body, h1, h2, h3, h4, h5, h6, hr, p, blockquote,</span> <span class="notation">/* structural elements 结构元素 */</span>
+<span class="tag">dl, dt, dd, ul, ol, li,</span> <span class="notation">/* list elements 列表元素 */</span>
+<span class="tag">pre,</span> <span class="notation">/* text formatting elements 文本格式元素 */</span>
+<span class="tag">form, fieldset, legend, button, input, textarea, select,</span> <span class="notation">/* form elements 表单元素 */</span>
+<span class="tag">th, td</span> <span class="braces">{</span> <span class="notation">/* table elements 表格元素 */</span>
+	<span class="property">margin</span><span class="value">:0px;</span>
+	<span class="property">padding</span><span class="value">:0px;</span>
+<span class="braces">}</span>
+<span class="notation">/* 用 ascii 字符表示，使得在任何编码下都无问题 */</span>
+<span class="tag">body, button, input, select, textarea</span> <span class="braces">{</span> <span class="property">font-size</span><span class="value">:12px;</span> <span class="property">font-family</span><span class="value">:"\5B8B\4F53", Arial, Tahoma, Helvetica, sans-serif;</span> <span class="braces">}</span>
+<span class="notation">/* 让窗口的默认背景色为白色 */</span>
+<span class="tag">body</span><span class="braces">{</span> <span class="property">background</span><span class="value">:#ffffff;</span> <span class="braces">}</span>
+<span class="notation">/* 去除标题标签的默认大小，统一100% */</span>
+<span class="tag">h1 ,h2, h3, h4, h5, h6</span> <span class="braces">{</span> <span class="property">font-size</span><span class="value">:100%;</span> <span class="braces">}</span>
+<span class="notation">/* 重置列表元素 */</span>
+<span class="tag">ul, ol</span> <span class="braces">{</span> <span class="property">list-style</span><span class="value">:none;</span> <span class="braces">}</span>
+<span class="notation">/* 重置文本格式元素 */</span>
+<span class="tag">a</span> <span class="braces">{</span> <span class="property">text-decoration</span><span class="value">:none;</span> <span class="braces">}</span>
+<span class="tag">a</span><span class="value">:hover</span> <span class="braces">{</span> <span class="property">text-decoration</span><span class="value">:underline;</span> <span class="braces">}</span>
+<span class="notation">/* 让链接里的 img 无边框、让表单组无边框 */</span>
+<span class="tag">fieldset, img</span> <span class="braces">{</span> <span class="property">border</span><span class="value">:none;</span> <span class="braces">}</span>
+<span class="notation">/* 重置表格元素 */</span>
+<span class="tag">table</span> <span class="braces">{</span> <span class="property">border-collapse</span><span class="value">:collapse;</span> <span class="property">border-spacing</span><span class="value">:0px;</span> <span class="braces">}</span>
+<span class="notation">/* 重置 HTML5 元素 */</span>
+<span class="tag">article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video</span> <span class="braces">{</span> <span class="property">display</span><span class="value">:block;</span> <span class="property">margin</span><span class="value">:0px;</span> <span class="property">padding</span><span class="value">:0px;</span> <span class="braces">}</span>
+<span class="notation">/* 清除浮动 */</span>
+<span class="cla">.clear</span><span class="braces">{</span> <span class="property">clear</span><span class="value">:both;</span> <span class="property">display</span><span class="value">:block;</span> <span class="property">height</span><span class="value">:0px;</span> <span class="property">overflow</span><span class="value">:hidden;</span> <span class="property">font-size</span><span class="value">:0px;</span> <span class="braces">}</span>
+<span class="cla">.clearfix:after</span><span class="braces">{</span> <span class="property">clear</span><span class="value">:both;</span> <span class="property">display</span><span class="value">:block;</span> <span class="property">height</span><span class="value">:0px;</span> <span class="property">overflow</span><span class="value">:hidden;</span> <span class="property">visibility</span><span class="value">:hidden;</span> <span class="property">content</span><span class="value">:"";</span> <span class="braces">}</span>
+</pre>
+			</li>
+			
+			<li>
+				<p>关于这个源代码的更多资料：</p>
+				<ul class="orderList">
+					<li><a href="http://meyerweb.com/eric/tools/css/reset/" target="_blank">http://meyerweb.com/eric/tools/css/reset/</a></li>
+					<li><a href="http://developer.yahoo.com/yui/reset/#code" target="_blank">http://developer.yahoo.com/yui/reset/#code</a></li>
+				</ul>
+			</li>
+			
+			<li>
+				<p>注意事项</p>
+				<ul class="orderList">
+					<li>针对一些老项目，请谨慎使用table { border-collapse:collapse; border-spacing:0px; }，尤其是医院项目中，如果页面存在商务通，严禁在全局中使用该属性；</li>
+					<li>如果修改，必须在最顶部添加相应的注释，包括修改时间、修改内容、修改人姓名；</li>
+				</ul>
+			</li>			
+		</ul>
+	</div>
+</div>
+</body>
+</html>
