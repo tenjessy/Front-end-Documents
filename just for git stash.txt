@@ -5,3 +5,7 @@
 2:this is dev
 
 test git stash save
+
+
+我在这里修改，然后直接推送到master分支下面~~
+或者直接在master下面选择性摘取这个文件
