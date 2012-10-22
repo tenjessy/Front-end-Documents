@@ -1,11 +1,15 @@
+sdfafasf
 1:this is dev
 
 3:
 
-2:this is dev
-
-test git stash save
+first 我在dev环境下编辑的
 
 
-我在这里修改，然后直接推送到master分支下面~~
-或者直接在master下面选择性摘取这个文件
+
+
+
+
+
+2012-10-22
+我这一行字是在jessy-dev下面开发的~~
