@@ -18,3 +18,7 @@ test a tag
 
 
 teg_before
+
+tag1
+
+tag2
