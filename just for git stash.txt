@@ -26,3 +26,5 @@ tag2
 test
 
 test a tag
+
+test a tag --2
