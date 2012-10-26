@@ -32,3 +32,5 @@ test a tag --2
 test a tag --3
 
 test a tag --5
+
+1、先在自己的分支下将所有的修改commit后，再打tag，再push到远程；
